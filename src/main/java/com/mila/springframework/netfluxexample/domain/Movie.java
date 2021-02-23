@@ -1,16 +1,16 @@
 package com.mila.springframework.netfluxexample.domain;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
 //annotation makes it a mongoDb document
 @Data //saves us a lot of boilerplate code
 @NoArgsConstructor
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class Movie {
 
     private String id;
