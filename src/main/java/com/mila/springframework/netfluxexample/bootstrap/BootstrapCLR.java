@@ -2,20 +2,17 @@ package com.mila.springframework.netfluxexample.bootstrap;
 
 import com.mila.springframework.netfluxexample.domain.Movie;
 import com.mila.springframework.netfluxexample.repository.MovieRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Flux;
 
 import java.util.UUID;
-
+@AllArgsConstructor
 @Component
 public class BootstrapCLR implements CommandLineRunner {
 
     private final MovieRepository movieRepository;
-
-    public BootstrapCLR(MovieRepository movieRepository) {
-        this.movieRepository = movieRepository;
-    }
 
     public void run(String... args) {
         movieRepository.deleteAll().thenMany(
